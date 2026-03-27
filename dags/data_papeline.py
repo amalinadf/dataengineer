@@ -33,8 +33,7 @@ def save_to_log(**context):
     creds = ServiceAccountCredentials.from_json_keyfile_name('/usr/local/airflow/kunci_google.json', scope)
     client = gspread.authorize(creds)
     
-    # 3. Buka Spreadsheet lo
-    # Pake ID yang dari link lo tadi: 1I5VzSKkB5qqbQKwuOWLdJ0FhbR7GDrr_r0U_9SDmlQs
+    # 3. Buka Spreadsheet
     sheet = client.open_by_key("1I5VzSKkB5qqbQKwuOWLdJ0FhbR7GDrr_r0U_9SDmlQs").sheet1
     
     # 4. Append Data (Waktu & Judul)
